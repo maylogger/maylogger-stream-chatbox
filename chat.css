@@ -8,6 +8,10 @@
 /*   Light theme */
   --text-color: rgba(0,0,0,.95);
   --box-color: rgba(255,255,255,.9);
+
+/* emote bounce delay */
+  --start: .1s;
+  --delay: .03s;
 }
 
 * {
@@ -94,19 +98,19 @@ body {
 }
 /* 表情符號動畫跳躍時間序列設定 */
 #log .emote:nth-child(5n-4) {
-    animation-delay: .1s;
+    animation-delay: var(--start);
 }
 #log .emote:nth-child(5n-3) {
-    animation-delay: .15s;
+    animation-delay: calc(var(--start) + var(--delay) * 1);
 }
 #log .emote:nth-child(5n-2) {
-    animation-delay: .2s;
+    animation-delay: calc(var(--start) + var(--delay) * 2);
 }
 #log .emote:nth-child(5n-1) {
-    animation-delay: .25s;
+    animation-delay: calc(var(--start) + var(--delay) * 3);
 }
 #log .emote:nth-child(5n) {
-    animation-delay: .6s;
+    animation-delay: calc(var(--start) + var(--delay) * 4);
 }
 
 #log .emote img {
