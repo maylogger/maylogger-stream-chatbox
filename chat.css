@@ -97,20 +97,35 @@ body {
   position: relative;
 }
 /* 表情符號動畫跳躍時間序列設定 */
-#log .emote:nth-child(5n-4) {
+#log .emote:nth-child(10n-9) {
     animation-delay: var(--start);
 }
-#log .emote:nth-child(5n-3) {
+#log .emote:nth-child(10n-8) {
     animation-delay: calc(var(--start) + var(--delay) * 1);
 }
-#log .emote:nth-child(5n-2) {
+#log .emote:nth-child(10n-7) {
     animation-delay: calc(var(--start) + var(--delay) * 2);
 }
-#log .emote:nth-child(5n-1) {
+#log .emote:nth-child(10n-6) {
     animation-delay: calc(var(--start) + var(--delay) * 3);
 }
-#log .emote:nth-child(5n) {
+#log .emote:nth-child(10n-5) {
     animation-delay: calc(var(--start) + var(--delay) * 4);
+}
+#log .emote:nth-child(10n-4) {
+    animation-delay: calc(var(--start) + var(--delay) * 5);
+}
+#log .emote:nth-child(10n-3) {
+    animation-delay: calc(var(--start) + var(--delay) * 6);
+}
+#log .emote:nth-child(10n-2) {
+    animation-delay: calc(var(--start) + var(--delay) * 7);
+}
+#log .emote:nth-child(10n-1) {
+    animation-delay: calc(var(--start) + var(--delay) * 8);
+}
+#log .emote:nth-child(10n) {
+    animation-delay: calc(var(--start) + var(--delay) * 9);
 }
 
 #log .emote img {
