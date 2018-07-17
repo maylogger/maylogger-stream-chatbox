@@ -83,7 +83,6 @@ body {
 
 /* 表情符號 */
 #log .emote {
-  image-rendering: -webkit-optimize-contrast;
 	display: inline-block;
   background-repeat: no-repeat;
   background-position: center;
@@ -151,17 +150,17 @@ body {
 #log .message img,
 #log .message .emote {
   vertical-align: bottom;
-  image-rendering: pixelated;
 }
 
 .badge {
-    display: inline-block;
-    margin-right: 0.2em;
-    position: relative;
-    height: 1em;
-    width: 1em;
-    vertical-align: middle;
-    top: -0.1em;
+  display: inline-block;
+  margin-right: 0.2em;
+  position: relative;
+  height: 1em;
+  width: 1em;
+  vertical-align: middle;
+  top: -0.1em;
+  image-rendering: pixelated;
 }
 
 .name {
