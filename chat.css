@@ -2,8 +2,8 @@
 
 :root {
 /*   dark theme */
-/*   --text-color: rgba(255,255,255,.95); */
-/*   --box-color: rgba(0,0,0,.3); */
+/*   --text-color: rgba(255,255,255,.95);
+  --box-color: rgba(0,0,0,.75); */
 
 /*   Light theme */
   --text-color: rgba(0,0,0,.95);
@@ -47,10 +47,11 @@ body {
   float: right;
   clear: right;
   background: var(--box-color);
-  width: 30%;
+  max-width: 35%;
+  min-width: 10%;
   margin: .5em .5em 0 0;
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: 5px;
   /* zoom effect initial */
   transform-origin: 100% 100%;
   transform: scale(1);
@@ -71,7 +72,7 @@ body {
 /* 最後發文聊天縮放 */
 #log>div:nth-last-child(1) {
   transform: scale(2);
-  width: 45%;
+  max-width: 40%;
   margin-top: 3.4em;
 }
 
@@ -144,7 +145,7 @@ body {
 #log .meta {
     position: relative;
     top: .1em;
-    padding: .5em .5em .2em .7em;
+    padding: .5em .7em .2em;
   	display: block;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -238,3 +239,4 @@ body {
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
 }
+
