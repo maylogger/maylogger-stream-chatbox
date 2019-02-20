@@ -4,15 +4,18 @@
 
 <!-- chat item -->
 <script type="text/template" id="chatlist_item">
-  <div data-from="{from}" data-id="{messageId}">
-    <span class="meta" style="color: {color}">
-      <span class="badges"></span><span class="name">{from}</span>
-    </span>
+	<div class="slider">
+    <div data-from="{from}" data-id="{messageId}" class="chat-box start" data-background="{color}">
+      <span class="meta">
+        <span class="badges"></span><span class="name">{from}</span>
+      </span>
 
-    <span class="message">
-      {message}
-    </span>
+      <span class="message">
+        {message}
+      </span>
+    </div>
   </div>
 </script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
