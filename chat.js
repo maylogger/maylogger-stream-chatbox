@@ -51,11 +51,11 @@ document.addEventListener('onEventReceived', function(obj) {
     var backgroundStyle = 
         (colorStyle == "white") ? 
         hsl2color(...darken(...hex2hsl(hex), 0.5,10)) :
-        hsl2color(...lighten(...hex2hsl(hex), 0.75, 10));
+        hsl2color(...lighten(...hex2hsl(hex), 0.5, 10));
     var gradient =
         (colorStyle == "white") ?
         "linear-gradient( to right," + backgroundStyle + "," + hsl2color(...darken(...hex2hsl(hex), 0.85,-5)) + ")" :
-        "linear-gradient( to right," + backgroundStyle + "," + hsl2color(...darken(...hex2hsl(hex), 1,-5)) + ")";
+        "linear-gradient( to right," + backgroundStyle + "," + hsl2color(...darken(...hex2hsl(hex), 1,5)) + ")";
     $(this).css( "background-image" , gradient  ).css( "color" , colorStyle );
   });
   $('#log>div .emote').removeClass('bounce animated');
@@ -64,7 +64,7 @@ document.addEventListener('onEventReceived', function(obj) {
 	});
   $('#log>div.slider:last-child').css({
    		'opacity' : '0','display' : 'none','right' : '-25%'
-	}).slideDown(200).animate({right:0,opacity:1},500);
+	}).slideDown(200).animate({right:0,opacity:1},700,'easeOutElastic');
   setTimeout(function() {
     $('#log>div .chat-box').removeClass('start');
   },50);
