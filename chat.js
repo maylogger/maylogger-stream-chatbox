@@ -64,7 +64,7 @@ document.addEventListener('onEventReceived', function(obj) {
 	});
   $('#log>div.slider:last-child').css({
    		'opacity' : '0','display' : 'none','right' : '-25%'
-	}).slideDown(200).animate({right:0,opacity:1},700,'easeOutElastic');
+	}).slideDown(300).delay(200).animate({right:0,opacity:1},300);
   setTimeout(function() {
     $('#log>div .chat-box').removeClass('start');
   },50);
