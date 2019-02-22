@@ -46,9 +46,6 @@ body {
 
 .slider {
     position: relative;
-    opacity: 0;
-    display: none;
-    right: -25%;
 }
 .slider:after {
     content: "";
@@ -75,6 +72,11 @@ body {
   animation: fadeOut 0.5s ease-in-out {message_hide_delay} forwards;
   -webkit-animation: fadeOut 0.5s ease-in-out {message_hide_delay} forwards;
 }
+
+#log>div:nth-child(odd) .chat-box {
+  max-width: 230px;
+}
+
 
 .colon {
   display: none;
@@ -195,7 +197,6 @@ body {
   top: -0.1em;
   image-rendering: pixelated;
   border-radius: 3px;
-  box-shadow: 0 0 15px 1px rgba(0,0,0,.4);
 }
 
 .name {
@@ -255,8 +256,3 @@ body {
   -webkit-transform-origin: center bottom;
   transform-origin: center bottom;
 }
-
-
-
-
-

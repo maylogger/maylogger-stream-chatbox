@@ -35,8 +35,8 @@ function getContrastYIQ(hexcolor){
 	return (yiq >= 100) ? 'black' : 'white';
 }
 
-function darken(h, s, l, x=0.5, move=0){ return [h+move/360, s, l * x]; }
-function lighten(h, s, l, x=0.5, move=0){ return [h+move/360, s, 1-(1-l)* x]; }
+function darken(h, s, l, x=0.5, move=0){ return [h+move/360, s*1.1, l * x]; }
+function lighten(h, s, l, x=0.5, move=0){ return [h+move/360, s*0.8, 1-(1-l)* x]; }
 
 // Please use event listeners to run functions.
 document.addEventListener('onLoad', function(obj) {
@@ -50,25 +50,22 @@ document.addEventListener('onEventReceived', function(obj) {
     var colorStyle = getContrastYIQ(hex);
     var backgroundStyle = 
         (colorStyle == "white") ? 
-        hsl2color(...darken(...hex2hsl(hex), 0.7,20)) :
-        hsl2color(...darken(...hex2hsl(hex), 0.95, -12));
+        hsl2color(...darken(...hex2hsl(hex), 0.5,10)) :
+        hsl2color(...lighten(...hex2hsl(hex), 0.75, 10));
     var gradient =
         (colorStyle == "white") ?
         "linear-gradient( to right," + backgroundStyle + "," + hsl2color(...darken(...hex2hsl(hex), 0.85,-5)) + ")" :
-        "linear-gradient( to right," + backgroundStyle + "," + hsl2color(...darken(...hex2hsl(hex), 0.9,5)) + ")";
+        "linear-gradient( to right," + backgroundStyle + "," + hsl2color(...darken(...hex2hsl(hex), 1,-5)) + ")";
     $(this).css( "background-image" , gradient  ).css( "color" , colorStyle );
   });
   $('#log>div .emote').removeClass('bounce animated');
   $('#log>div:last-child .emote').each(function( index ) {
     $(this).attr('style', $(this).attr('style').replace('1.0','3.0')).addClass('bounce animated');
 	});
-  $('#log>div.slider').slideDown(200).animate({right:0,opacity:1},500,'easeOutBack');
+  $('#log>div.slider:last-child').css({
+   		'opacity' : '0','display' : 'none','right' : '-25%'
+	}).slideDown(200).animate({right:0,opacity:1},500);
   setTimeout(function() {
     $('#log>div .chat-box').removeClass('start');
-  },200);
+  },50);
 });
-
-
-
-
-
