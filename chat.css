@@ -57,7 +57,7 @@ body {
   float: right;
   clear: right;
   background: var(--box-color);
-  max-width: 250px;
+  max-width: calc( 8em + 1.2em);
   min-width: 0;
   /* height: 0; */
   margin: .5em .5em 0 0;
@@ -73,8 +73,8 @@ body {
   -webkit-animation: fadeOut 0.5s ease-in-out {message_hide_delay} forwards;
 }
 
-#log>div:nth-child(odd) .chat-box {
-  max-width: 230px;
+#log>div .chat-box.odd {
+  max-width: calc( 7em + 1.2em);
 }
 
 

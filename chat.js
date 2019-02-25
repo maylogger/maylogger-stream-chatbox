@@ -1,5 +1,7 @@
 $( document ).ready()
 
+window.odd = 0;
+
 function hex2rgb(hexcolor){
   	var r = parseInt(hexcolor.substr(1,2),16);
     var g = parseInt(hexcolor.substr(3,2),16);
@@ -27,7 +29,7 @@ function hex2hsl(hex) {
   return rgb2hsl(...hex2rgb(hex));
 }
 
-function hsl2color(h, s, l){ return "hsl(" + parseInt(h*360) + ", " + parseInt(s*100) + "%, " + parseInt(l * 100) + "%)"; }
+function hsl2color(h, s, l, a=1){ return "hsla(" + parseInt(h*360) + ", " + parseInt(s*100) + "%, " + parseInt(l * 100) + "%," + a +")"; }
 
 function getContrastYIQ(hexcolor){
 	var [r,g,b] = hex2rgb(hexcolor);
@@ -45,7 +47,8 @@ document.addEventListener('onLoad', function(obj) {
 });
 
 document.addEventListener('onEventReceived', function(obj) {
-  $('#log>div:last-child .chat-box').each(function( index ) {
+  var $this = $('#log>div:last-child .chat-box');
+  $this.each(function( index ) {
     var hex = $(this).data("background");
     var colorStyle = getContrastYIQ(hex);
     var backgroundStyle = 
@@ -54,9 +57,10 @@ document.addEventListener('onEventReceived', function(obj) {
         hsl2color(...lighten(...hex2hsl(hex), 0.5, 10));
     var gradient =
         (colorStyle == "white") ?
-        "linear-gradient( to right," + backgroundStyle + "," + hsl2color(...darken(...hex2hsl(hex), 0.85,-5)) + ")" :
-        "linear-gradient( to right," + backgroundStyle + "," + hsl2color(...darken(...hex2hsl(hex), 1,5)) + ")";
-    $(this).css( "background-image" , gradient  ).css( "color" , colorStyle );
+        "linear-gradient( to right," + backgroundStyle + "," + hsl2color(...darken(...hex2hsl(hex), 0.85,-5),.9) + ")" :
+        "linear-gradient( to right," + backgroundStyle + "," + hsl2color(...darken(...hex2hsl(hex), 1,5),.9) + ")";
+    $this.css( "background-image" , gradient  ).css( "color" , colorStyle ).css("background-color","transparent");
+    if ( ++window.odd % 2 == 1 ) { $this.addClass("odd") };
   });
   $('#log>div .emote').removeClass('bounce animated');
   $('#log>div:last-child .emote').each(function( index ) {
