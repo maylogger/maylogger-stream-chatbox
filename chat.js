@@ -52,24 +52,25 @@ document.addEventListener('onEventReceived', function(obj) {
     var hex = $(this).data("background");
     var colorStyle = getContrastYIQ(hex);
     var backgroundStyle = 
-        (colorStyle == "white") ? 
-        hsl2color(...darken(...hex2hsl(hex), 0.5,10)) :
+        (colorStyle == "white") ?
+        hsl2color(...darken(...hex2hsl(hex), 0.5,10),.85) :
         hsl2color(...lighten(...hex2hsl(hex), 0.5, 10));
     var gradient =
         (colorStyle == "white") ?
-        "linear-gradient( to right," + backgroundStyle + "," + hsl2color(...darken(...hex2hsl(hex), 0.85,-5),.9) + ")" :
-        "linear-gradient( to right," + backgroundStyle + "," + hsl2color(...darken(...hex2hsl(hex), 1,5),.9) + ")";
+        "linear-gradient( to right," + backgroundStyle + "," + hsl2color(...darken(...hex2hsl(hex), 0.85,-5)) + ")" :
+        "linear-gradient( to right," + backgroundStyle + "," + hsl2color(...darken(...hex2hsl(hex), 1,5),.85) + ")";
     $this.css( "background-image" , gradient  ).css( "color" , colorStyle ).css("background-color","transparent");
     if ( ++window.odd % 2 == 1 ) { $this.addClass("odd") };
   });
   $('#log>div .emote').removeClass('bounce animated');
   $('#log>div:last-child .emote').each(function( index ) {
-    $(this).attr('style', $(this).attr('style').replace('1.0','3.0')).addClass('bounce animated');
+    // $(this).attr('style', $(this).attr('style').replace('1.0','3.0')).addClass('bounce animated');
+    $(this).attr('style', $(this).attr('style').replace('1.0','3.0'));
 	});
   $('#log>div.slider:last-child').css({
    		'opacity' : '0','display' : 'none','right' : '-25%'
 	}).slideDown(300).delay(200).animate({right:0,opacity:1},300);
   setTimeout(function() {
-    $('#log>div .chat-box').removeClass('start');
+    $this.removeClass('start');
   },50);
 });
