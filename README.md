@@ -1,4 +1,4 @@
-# puyopuyotetris-streamlabs-chatbox
+# may_logger's live stream chatbox  (streamlabs required)
 
 ## Install
 
