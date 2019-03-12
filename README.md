@@ -3,7 +3,7 @@
 ## Install
 
 Copy and paste into your streamlabs chatbox custom HTML/CSS and JS.  
-http://streamlabs.com/dashboard#/chatbox
+<a href="http://streamlabs.com/dashboard#/chatbox" target="_blank">streamlabs chatbox</a>
 
 ![](https://media.giphy.com/media/9zZm2gYn6xKYzCKTps/giphy.gif)
 
