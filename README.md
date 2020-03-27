@@ -2,7 +2,7 @@
 
 ## Install
 
-Copy and paste into your streamlabs chatbox custom HTML/CSS and JS.  
+Copy and paste HTML/CSS/JS in this repo into your streamlabs's chatbox custom HTML/CSS and JS.
 <a href="http://streamlabs.com/dashboard#/chatbox" target="_blank">streamlabs chatbox</a>
 
 ![](https://media.giphy.com/media/9zZm2gYn6xKYzCKTps/giphy.gif)
