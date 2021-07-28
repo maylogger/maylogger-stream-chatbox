@@ -333,8 +333,10 @@ if ( $log.length > 8 ) {
 
 ### Step 4
 
-Click save settings
+Click "save settings" button.
 
 ### Step 5
 
-Find "Widget URL" on page top and go OBS create a browse source using this url.
+Find and copy the "Widget URL" at the top of page.
+Go OBS, create a browser source with "Widget URL".
+I highly recommend setting the "browser soruce" size to 800 x 1080 and placing it on the right edge of the screen canvas.
