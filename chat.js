@@ -47,6 +47,14 @@ document.addEventListener('onLoad', function(obj) {
 });
 
 document.addEventListener('onEventReceived', function(obj) {
+
+var $log = $('#log>div');
+var totallogs = $log.length;
+
+$log.each(function(index){
+  $(this).attr( "data-order", Math.max(1, 8 - (totallogs - index - 1)) );
+});
+  
   var $this = $('#log>div:last-child .chat-box');
   $this.each(function( index ) {
     var hex = $(this).data("background");
@@ -69,8 +77,15 @@ document.addEventListener('onEventReceived', function(obj) {
 	});
   $('#log>div.slider:last-child').css({
    		'opacity' : '0','display' : 'none','right' : '-25%'
-	}).slideDown(300).delay(200).animate({right:0,opacity:1},300);
-  setTimeout(function() {
-    $this.removeClass('start');
-  },50);
+	}).slideDown(150).delay(100).animate({right:0,opacity:1},150,function(){
+      $this.removeClass('start');
+      $(this).css( 'opacity' ,'');
+  });
+  
+if ( $log.length > 8 ) {
+    $log.slice(0, totallogs - 8 ).animate({ opacity: 0 }, 150, function(){
+      $(this).remove();
+    });
+  };
+    
 });
